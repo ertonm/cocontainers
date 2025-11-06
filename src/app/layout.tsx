@@ -3,6 +3,8 @@ import { Saira , Poppins } from 'next/font/google';
 import Navbar from "./components/navbar";
 import "./globals.css";
 import "./components/navbar.module.css";
+import FixCSSVars from './components/FixCSSVars';
+import { CartButton } from './components/CartButton';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -30,6 +32,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.variable + ',' + saira.variable}>
         <Navbar />
+        <FixCSSVars />
+        <CartButton />
         {children}
       </body>
     </html>

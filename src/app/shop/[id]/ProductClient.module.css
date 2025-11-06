@@ -1,0 +1,147 @@
+/* ======================================================= */
+/* 🛠️ BASE MOBILE STYLES (Single Column Layout) */
+/* ======================================================= */
+
+.main {
+  padding: 1.5rem 1rem; /* Reduced padding for mobile */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.backLink {
+  color: var(--orange-600);
+  text-decoration: none;
+  font-weight: 500;
+  display: block; /* Ensures it takes its own space */
+  margin-bottom: 1rem;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column; /* Stacked columns for mobile */
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+/* --- Image Section --- */
+.productImage {
+  width: 100%;
+  border-radius: 16px;
+  /* Ensure image scales down nicely */
+  height: auto; 
+}
+
+/* --- Details Section --- */
+.details {
+  text-align: left;
+}
+
+.details h1 {
+  font-size: 2rem; /* Mobile-friendly heading size */
+  color: var(--orange-600);
+  margin-bottom: 0.5rem;
+}
+
+.details p {
+  color: var(--gray-700);
+  margin-bottom: 1.5rem;
+}
+
+/* --- Selectors (Color/Condition) --- */
+.selectorGroup {
+  margin: 1rem 0;
+}
+
+.selectorLabel {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--gray-900);
+}
+
+.colorSelect {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--gray-700);
+}
+
+/* --- Condition Radio Buttons Styling --- */
+.conditionOption {
+  display: inline-flex; /* Use flex to align radio and label */
+  align-items: center;
+  margin-left: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--gray-100);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.conditionOption input[type="radio"] {
+  /* Visually hide the default radio button */
+  appearance: none;
+  margin: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Style for when the radio is checked */
+.conditionOption input[type="radio"]:checked + span {
+  background-color: var(--orange-50);
+  border-color: var(--orange-600);
+  color: var(--orange-600);
+  font-weight: 600;
+}
+
+.conditionOption span {
+  /* This span holds the visible content */
+  display: block;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid transparent;
+}
+
+
+/* --- Add to Cart Button --- */
+.addToCartButton {
+  background: var(--orange-600);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  width: 100%;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.addToCartButton:hover {
+  background: var(--orange-700);
+}
+
+
+/* ======================================================= */
+/* 💻 DESKTOP/TABLET ENHANCEMENTS (min-width: 768px) */
+/* ======================================================= */
+
+@media (min-width: 768px) {
+  .contentWrapper {
+    /* Two-column grid for wider screens */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+  
+  .details h1 {
+    font-size: 2.5rem; /* Restore larger desktop heading */
+  }
+
+  .addToCartButton {
+    max-width: 400px; /* Limit button width on desktop */
+  }
+}

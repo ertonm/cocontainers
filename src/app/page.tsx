@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react';
 import styles from './page.module.css';
-import Link from 'next/link';
+import Link from 'next/link'; // Make sure Link is imported
 
 export default function Home() {
   const [activeStep] = useState<number | null>(null);
@@ -21,7 +21,12 @@ export default function Home() {
         </p>
         <div className={styles.buttons}>
           <button className={styles.primary} onClick={scrollToStepOne}>Get Started</button>
-          <button className={styles.secondary}>Order NOW</button>
+          
+          {/* Change 1: Updated to Link, using the same CSS class */}
+          <Link href="/shop" className={styles.secondary}>
+            Order NOW
+          </Link>
+
         </div>
       </section>
 
@@ -38,7 +43,12 @@ export default function Home() {
         <p style={{ marginBottom: '1rem' }}>
           Questions? {<Link href="/faq">See <u>FAQ</u></Link>}
         </p>
-        <button className={styles.shop}>SHOP</button>
+        
+        {/* Change 2: Updated to Link, using the same CSS class */}
+        <Link href="/shop" className={styles.shop}>
+          SHOP
+        </Link>
+
       </section>
     </main>
   )

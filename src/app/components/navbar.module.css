@@ -1,11 +1,14 @@
 :root {
   --font-saira: 'Saira', sans-serif;
+  /* Add your --orange-600 and --orange-700 variables here if not global */
+  /* e.g., --orange-600: #EA580C; */
+  /* e.g., --orange-700: #C2410C; */
 }
 
 /* Navbar CSS – Orange Theme */
 .navbar {
   background-color: rgb(28, 28, 28);
-  padding: 1vh 0; /* Increased from 0.5vh for better touch */
+  padding: 1vh 0;
   box-shadow: 0 4px 12px rgba(234, 88, 12, 0.15); 
   position: sticky;
   top: 0;
@@ -31,6 +34,8 @@
   color: var(--orange-600);
   letter-spacing: -0.5px;
   transition: color 0.2s ease;
+  /* Add some padding for easier clicking on mobile */
+  padding: 0.5rem 0;
 }
 
 .logo:hover {
@@ -55,6 +60,8 @@
   font-size: 1rem;
   position: relative;
   transition: color 0.2s ease;
+  /* Add some padding for easier clicking on mobile */
+  padding: 0.5rem 0;
 }
 
 .nav a::after {
@@ -79,16 +86,28 @@
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .container {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
+    /* REMOVED: flex-direction: column; */
+    /* This keeps the navbar as a single row */
+    padding: 0 1rem;
+    /* You might want to reduce the gap for mobile */
+    justify-content: space-between; 
   }
   
   .nav {
-    gap: 1.5rem;
+    /* Reduce gap between nav items on small screens */
+    gap: 1.25rem;
   }
   
   .logo {
     font-size: 1.5rem;
+  }
+
+  .nav a {
+    font-size: 0.9rem; /* Slightly smaller text on mobile */
+  }
+
+  /* This hides the hover underline effect on mobile */
+  .nav a::after {
+    display: none;
   }
 }
