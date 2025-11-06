@@ -1,0 +1,4 @@
+have to finish faq as it is easy to setup
+then go to the shop logic which is the hardest part, needs to have size capability and color picker
+basket logic and maybe payments
+contant should be a normal basic contact with manager numbers etc
